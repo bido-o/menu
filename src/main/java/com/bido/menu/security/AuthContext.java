@@ -25,7 +25,7 @@ public record AuthContext(Long userId, String role, String email) {
         return userId != null && userId.equals(ownerId);
     }
 
-    public void requireSupplierOwner(Long ownerId) {
+    public void requireSupplierOwnerOrAdmin(Long ownerId) {
         if (isAdmin()) return;
         if (isSupplier() && isOwner(ownerId)) return;
         throw forbidden();

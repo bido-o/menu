@@ -12,5 +12,5 @@ public record CreateMenuItemVariantRequest(
         BigDecimal quantity,
         @NotNull @DecimalMin("0.01") BigDecimal price,
         Long unitTypeId,
-        Integer sortOrder
+        @NotNull Integer sortOrder
 ) {}

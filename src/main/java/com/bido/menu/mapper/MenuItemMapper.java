@@ -9,7 +9,6 @@ import com.bido.menu.entity.*;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.Comparator;
 import java.util.List;
 
 @Component
@@ -61,12 +60,7 @@ public class MenuItemMapper {
         );
     }
 
-    public MenuItemSummaryDto toSummaryDto(MenuItem item, List<MenuItemVariant> variants) {
-        BigDecimal startingPrice = variants.stream()
-                .map(MenuItemVariant::getPrice)
-                .min(Comparator.naturalOrder())
-                .orElse(null);
-
+    public MenuItemSummaryDto toSummaryDto(MenuItem item, BigDecimal startingPrice) {
         return new MenuItemSummaryDto(
                 item.getId(),
                 item.getName(),

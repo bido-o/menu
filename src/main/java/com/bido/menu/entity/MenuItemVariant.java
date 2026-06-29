@@ -40,11 +40,11 @@ public class MenuItemVariant {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "menu_item_id", nullable = false)
-    private MenuItem menuItemId;
+    private MenuItem menuItem;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "unit_type_id")
-    private UnitType unitTypeId;
+    private UnitType unitType;
 
     //getters & setters
     public Long getId() { return id; }
@@ -61,11 +61,11 @@ public class MenuItemVariant {
     public Integer getSortOrder() { return sortOrder; }
     public void setSortOrder(Integer sortOrder) { this.sortOrder = sortOrder; }
 
-    public MenuItem getMenuItem() { return menuItemId; }
-    public void setMenuItem(MenuItem menuItem) { this.menuItemId = menuItem; }
+    public MenuItem getMenuItem() { return menuItem; }
+    public void setMenuItem(MenuItem menuItem) { this.menuItem = menuItem; }
 
-    public UnitType getUnitTypeId() { return unitTypeId; }
-    public void setUnitTypeId(UnitType unitTypeId) { this.unitTypeId = unitTypeId; }
+    public UnitType getUnitType() { return unitType; }
+    public void setUnitType(UnitType unitType) { this.unitType = unitType; }
 
     public Instant getCreatedAt() { return createdAt;}
     public Instant getUpdatedAt() { return updatedAt; }
